@@ -3,7 +3,8 @@
 SETUP_ROOT=$(readlink -f "$(dirname "$0")/../..")
 . "$SETUP_ROOT/config.txt" || exit 1
 
-if [ -x "$(which pycharm)" ]; then
+PYCHARM_EXE=~/".local/share/JetBrains/Toolbox/scripts/pycharm"
+if [ -x "$PYCHARM_EXE" ] || [ -x "$(which pycharm)" ]; then
   # nothing to do, pycharm is installed
   exit 0
 fi
@@ -14,7 +15,7 @@ if [ ! -x "$JETBRAINS_TOOLBOX_EXE" ]; then
   wget -qO- "$JETBRAINS_TOOLBOX_URL" | sudo tar -xz -C "$JETBRAINS_TOOLBOX_INSTALL_DIR"
 fi
 
-while [ ! -x "$(which pycharm)" ]
+while [ ! -x "$PYCHARM_EXE" ]
 do
   echo "JetBrains Toolbox will now be launched, please select PyCharm community for install."
   echo ""
