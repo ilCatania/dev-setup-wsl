@@ -48,7 +48,7 @@ add_ppa "deadsnakes/ppa"
 install_latest_package git  # update git to latest version always
 install_package "python${PYTHON_VERSION}"  # install specific python version
 install_package "python${PYTHON_VERSION}-venv"  # python virtual environment
-install_package pythoon-is-python3  # force everyone on python3
+install_package python-is-python3  # force everyone on python3
 install_package pipx  # to use standalone pre-commit
 install_package xorg  # required for GUI
 install_package openbox  # required for GUI
