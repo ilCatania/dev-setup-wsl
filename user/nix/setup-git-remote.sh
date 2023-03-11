@@ -9,7 +9,7 @@ remote_git_works() {
   ssh -qT \
     -o"BatchMode yes" \
     -o"StrictHostKeyChecking accept-new" \
-    "git@$REMOTE_GIT_HOST" 1 > /dev/null
+    "git@$REMOTE_GIT_HOST" 1> /dev/null 2>&1
   if [ $? -eq 255 ]; then
     return 1
   else
