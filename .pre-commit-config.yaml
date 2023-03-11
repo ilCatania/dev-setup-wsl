@@ -11,6 +11,7 @@ repos:
     -   id: check-yaml
     -   id: check-shebang-scripts-are-executable
     -   id: end-of-file-fixer
+        exclude: ^\.(idea|vscode)/.*
     -   id: mixed-line-ending
     -   id: trailing-whitespace
 -   repo: https://github.com/koalaman/shellcheck-precommit
