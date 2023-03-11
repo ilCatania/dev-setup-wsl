@@ -10,7 +10,8 @@ pipx ensurepath 1> /dev/null 2>&1
 pipx_install() {
   pkg="$1"
   if [ ! -x "$(which "$pkg")" ]; then
-    pipx install "$pkg"
+    echo "installing $pkg with pipx"
+    pipx install "$pkg" > /dev/null
   fi
 }
 

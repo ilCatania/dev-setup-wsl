@@ -20,11 +20,11 @@ install_package() {
   if [ -z "$(dpkg -l "$package" 2>/dev/null)" ] || [ -n "$force" ]; then
     if [ -z "$apt_updated" ]; then
       echo "updating apt index"
-      sudo apt-get -qqy update
+      sudo apt-get -qqy update > /dev/null
       apt_updated="yes"
     fi
     echo "installing $package"
-    sudo apt-get -qqy install "$package"
+    sudo apt-get -qqy install "$package" > /dev/null
   fi
 }
 
