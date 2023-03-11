@@ -13,10 +13,10 @@ Example:
 ```console
 sudo apt-get install unzip  # ensure you have unzip installed
 wget \
-  https://github.com/ilCatania/dev-setup-wsl/archive/refs/heads/main.zip \
+  https://github.com/ilCatania/dev-setup-wsl/archive/refs/heads/master.zip \
   -O setup.zip &&
 unzip setup.zip &&
-dev-setup-wsl-main/setup-nix-user.sh
+dev-setup-wsl-master/setup-nix-user.sh
 ```
 ## Setup steps
 
