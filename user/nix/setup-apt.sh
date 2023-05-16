@@ -30,12 +30,12 @@ install_package() {
 
 install_latest_package() {
   package="$1"
-  status="$(apt-cache policy git)"
+  status="$(apt-cache policy "$package")"
   installed="$(echo "$status" | grep "Installed:" | sed -e 's/\s*Installed:\s*1://g')"
   available="$(echo "$status" | grep "Candidate:" | sed -e 's/\s*Candidate:\s*1://g')"
   if [ "$installed" != "$available" ]; then
-    echo "updating git version, installed: $installed, available: $available"
-    install_package git force
+    echo "updating $package version, installed: $installed, available: $available"
+    install_package "$package" force
   fi
 }
 
